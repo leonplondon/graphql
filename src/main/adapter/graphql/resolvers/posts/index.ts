@@ -1,7 +1,7 @@
 import { IdFilter, NumberFilter, PostDto } from '../../model/posts'
 
 import AppContext from '../../context'
-import createLogger from '../../../../config/logger'  
+import createLogger from '../../../../config/logger'
 import GetPostByIdQuery from '../../../../application/port/in/GetPostByIdQuery'
 import GetPostsQuery from '../../../../application/port/in/GetPostsQuery'
 
@@ -29,7 +29,7 @@ export const createPostResolver = (
   },
   Mutation: {
     createPost: async (root: unknown, post: PostDto) => {
-      return Promise.resolve(post)
+      return Promise.resolve(Math.round(Math.random() * 10e6))
     },
   },
   Subscription: {},
